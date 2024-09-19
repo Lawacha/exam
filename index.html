@@ -3,12 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>css</title>
+    <title>Registration Form</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="box">
-        <p>This is css</p>
-    </div>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <p>Please fill out this form with the required information</p>
+     <form action="">
+     <div class="name ">
+       <label for="fname"><p>Enter Your First Name:</p></label> 
+        <input type="text" id="fname" name="firstname" required>
+
+     </div>
+     <div class="name ">
+        <label for="lname"><p>Enter Your Last Name:</p>
+        <input type="text" id="lname" name="lastname" required>
+     </div>
+     <div>
+        <label for="mail"><p>Enter Your Email:</p></label>
+        <input type="email" id="mail" name="email" required >
+     </div>
+     <div>
+        <label for="code"><p>Create a New Password:</p></label>
+        <input type="password" id="code" name="password" required>
+     </div>
+     <hr>
+     <div>
+        <p>Account type(required)</p>
+        <label for="a"><input type="radio" name="Account" value="Personal" id="a" >Personal</label>
+        <label for="b"><input type="radio" id="b" name="Account" value="Buisness">Buisness</label>
+     </div>
+     <hr>
+     <div>
+        <p>Upload a profile picture:</p>
+        
+       <div>
+       <label for="age"> <p>Input Your Age(years):</p></label>
+        <input type="number" name="age" id="age" max="100" min="10" required>
+       </div>
+       <div>
+        <label for="refer"><p>How did you hear about us?</p></label>
+        <select name="refer" id="refer">
+            <option value=""  selected >(select one)</option>
+            <option value="1">freecodecamp news</option>
+            <option value="2">freecodecamp Youtube channel</option>
+            <option value="3">freecodecamp forum</option>
+            <option value="4">other</option>
+        </select>
+       </div>
+       <div>
+        <label for="bio"><p>Provide a bio:</p></label>
+        <textarea name="bio" id="bio" placeholder="any comments.."></textarea>
+       </div>
+       <div>
+        <input type="checkbox" name="terms" value="accept">I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and condition</a>
+       </div>
+
+     </div>
+     <div>
+     <button type="submit" >Submit</button>
+       </div>
+
+</div>
+</form>
 </body>
 </html>
