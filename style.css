@@ -1,4 +1,21 @@
-#box{
-    background-color: blue;
+.container{
+    margin: 10%;
+
+
+}
+h1{
+    color: #f5f6f7;
+    font: 32px Tahoma  ;
+}
+p{
+    color: #f5f6f7;
+    font: 16px Tahoma;
+    margin: 16px 0px;
     
+}
+body{
+    background-color: #1B1b32;
+    color: #f5f6f7;
+    width: 775px;
+    height: 539px;
 }
