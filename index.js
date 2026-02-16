@@ -1,19 +1,26 @@
 const express=require('express')
+const path=require('path')
 const app=express()
 let port=8080
 
-app.get("/multiply",(req,res)=>{
-    let {a,b}=req.query
-    let multiply=a*b
-    res.send(`result is ${multiply}`)
+app.set("view engine",'ejs')
+app.set('views',path.join(__dirname,'views'))
+
+app.get("/",(req,res)=>{
+    res.render('home.ejs')
 })
 
-app.get("/search",(req,res)=>{
-    let {q}=req.query
-    res.send(`name is ${q}`)
+app.get("/rolldice",(req,res)=>{
+    let dice=Math.floor(Math.random()*6)+1
+    res.render('home.ejs',{dice})
 })
 
-
+app.get("/ig/:username",(req,res)=>{
+    let instaData=require("./data.js")
+    let {username}=req.params
+    let data=instaData[username]
+    res.render('instagram.ejs',{data})
+})
 
 app.listen(port,()=>{
     console.log(`listening to port: ${port}`)

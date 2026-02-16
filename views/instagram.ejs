@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div style="width: 100%;display: flex;flex-wrap: wrap; flex-direction: column; justify-self: center; align-items: center;">
+
+        <h2> @<%=data.name %>  </h2>
+        <img src="<%= data.posts[0].photo %>" alt="iron man" width="100" height="100" style="border-radius: 50%;display: block;"><br>
+
+        <span>
+            <button>Follow</button>
+            <button>Message</button>
+        </span>
+
+        <h2>Posts</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; width: 100%;">
+           
+            <% for(let i=0;i<data.posts.length;i++){ %>
+            
+                <div style="margin: 5px;">
+                    <img style="display: block;" height="300" width="300" src="<%= data.posts[i].photo %>" alt="">
+                    
+                    <p> <%= data.posts[i].caption %> </p>
+                    <i class="fa-regular fa-heart" onclick="this.style.color='red'; this.classList.replace('fa-regular','fa-solid')"></i>
+                    
+                        <span>
+                        <i class="fa-regular fa-comment"></i>
+                        <p style="display: inline;">
+                            <%= data.posts[i].comments[0].text %>
+                        </p>
+                    </span>
+                </div>
+                <% } %>
+        </div>
+
+        <br>
+
+
+    </div>
+
+</body>
+
+</html>
