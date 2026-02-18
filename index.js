@@ -6,6 +6,20 @@ let port=8080
 app.set("view engine",'ejs')
 app.set('views',path.join(__dirname,'views'))
 
+//handling post request
+app.use(express.urlencoded({extended:true}))
+
+
+app.get('/register',(req,res)=>{
+    let {user,password}=req.query
+    res.send(`standard get request. welcome ${user}`)
+})
+
+app.post('/register',(req,res)=>{
+    let {user,password}=req.body
+    res.send(`standard post request. welcome ${user}`)
+})
+
 app.get("/",(req,res)=>{
     res.render('home.ejs')
 })
