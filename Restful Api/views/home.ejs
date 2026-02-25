@@ -16,7 +16,12 @@
             <p><%= post.quote %></p>
            
             <a href="http://localhost:8080/posts/<%= post.id%>"><button>View</button></a>
-            <a href="http://localhost:8080/posts"><button>Delete</button></a>
+            <a href="http://localhost:8080/posts/<%= post.id%>/edit"><button>Edit</button></a> 
+           
+            <form action="/posts/<%= post.id %>?_method=DELETE " method="post">
+                 <a href="http://localhost:8080/posts"><input type="submit" value="Delete"></a>
+            </form>
+
         </div>
         <%  }%>
     </div>
