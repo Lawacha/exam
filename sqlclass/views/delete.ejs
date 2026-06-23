@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost:8080/user/<%=id%>/delete?_method=delete" method="post">
+        <h2>Delete id: <%=id %></h2>
+        <p>Username</p>
+        <input type="text" name="username" placeholder="enter your username">
+        <p>Password</p>
+        <input type="text" name="password" placeholder="enter your password">
+        <input type="submit" value="delete">
+    </form>
+</body>
+</html>
